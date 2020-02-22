@@ -11,6 +11,8 @@ ul {
     list-style: none;
     text-align: left;
     font-family: 'Dosis', sans-serif;
+    font-size: 1.2em;
+    font-weight: bolder;
 }
 
 ul li:before {
@@ -23,11 +25,10 @@ li {
     padding-top: 20px;
 }
 
-
-/*.titulo,
-.comentario {
-    background-color: rgba(255, 255, 255);
-}*/
+.vertical-align {
+    display: flex;
+    align-items: flex-end;
+}
 
 .comentario {
     text-align: justify;
@@ -73,4 +74,16 @@ h3 {
 .pie {
     position: fixed;
     bottom: 0px;
+}
+
+@media (max-width:1300px) {
+    ul {
+        font-size: 0.9em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h4 {
+        font-size: 1.1em;
+    }
 }
