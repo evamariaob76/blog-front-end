@@ -27,12 +27,30 @@
        }
        
        .boton {
-           background: rgba(179, 194, 124);
+           background: rgba(41, 64, 29);
            color: white;
+           font-size: 15px;
        }
        
        .boton:hover {
            color: white;
+           font-weight: bolder;
+       }
+       
+       .danger {
+           background: rgb(197, 202, 180);
+           font-size: smaller;
+           padding: 1%;
+           margin: 0px;
+           color: red!important;
+       }
+       
+       .alert {
+           color: rgba(41, 64, 29);
+           font-size: smaller;
+           padding: 1%;
+           margin: 0px;
+           text-align: center;
        }
        
        .btn-rounded {
@@ -106,12 +124,12 @@
            }
        }
        
-       @media (max-width:1300px) {
-           .row {
-               font-size: 0.5em;
-           }
+       @media (min-width:1000px) and (max-width:1400px) {
+           label,
            h2 {
-               font-size: 0.7em;
+               font-size: smaller;
            }
-           input {}
+           form {
+               margin-bottom: 100px;
+           }
        }

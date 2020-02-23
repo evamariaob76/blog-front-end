@@ -8,11 +8,11 @@
             <input type="text" class="form-control form-control-sm " style="padding-top: 10%" #nombre="ngModel" id="nombre" [(ngModel)]="Email.nombre" name="nombre" required minlength="3vb">
             <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
                 <div *ngIf="nombre.errors.required ">
-                    Nombre es requerido
+                    campo requerido
                 </div>
 
                 <div *ngIf="nombre.errors.minlength ">
-                    Nombre debe tener al menos 3 caracteres
+                    al menos 3 caracteres
                 </div>
             </div>
         </div>
@@ -22,13 +22,13 @@
     <div class="form-group row">
         <label class="col-lg-2 col-sm-2 col-md-2 col-xs-2 col-2 col-form-label" for="email">Email</label>
         <div class="col-sm-9">
-            <input type="email" class="form-control form-control-sm" id="colFormLabelSm" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" type="email" id="apellido" #email="ngModel" [(ngModel)]="Email.email" required name="email">
+            <input type="email" class="form-control form-control-sm" id="colFormLabelSm" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" type="email" id="email" #email="ngModel" [(ngModel)]="Email.email" required name="email">
             <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
                 <div *ngIf="email.errors.required ">
-                    Email es requerido
+                    campo requerido
                 </div>
-                <div *ngIf="email.errors.email ">
-                    Email tiene que tener un formato válido
+                <div *ngIf="email.errors ">
+                    debe tener un formato válido
                 </div>
             </div>
         </div>
@@ -36,59 +36,46 @@
 
 
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="apellido">Teléfono </label>
+        <label class="col-sm-2 col-form-label" for="telefono">Teléfono </label>
         <div class="col-sm-9">
 
-            <input type="text" class="form-control form-control-sm" id="apellido" #apellido="ngModel" [(ngModel)]="Email.apellido" required minlength="5" name="apellido">
+            <input type="tel" pattern="[0-9]{9}" class="form-control form-control-sm" id="telefono" #telefono="ngModel" [(ngModel)]="Email.telefono" required minlength="9" name="telefono">
 
-            <div class="alert alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
-                <div *ngIf="apellido.errors.required ">
-                    Apellidos es requerido
+            <div class="alert alert-danger" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+                <div *ngIf="telefono.errors.required ">
+                    campo requerido
                 </div>
 
-                <div *ngIf="apellido.errors.minlength ">
-                    Apellidos debe tener al menos 3 caracteres
+                <div *ngIf="telefono.errors ">
+                    formato incorrecto
                 </div>
             </div>
 
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="texto">Empresa </label>
+        <label class="col-sm-2 col-form-label" for="empresa">Empresa </label>
         <div class="col-sm-9">
 
-            <input type="text" class="form-control form-control-sm" id="texto" #apellido="ngModel" [(ngModel)]="Email.texto" required minlength="5" name="texto">
+            <input type="text" class="form-control form-control-sm" id="empresa" #empresa="ngModel" [(ngModel)]="Email.empresa" required minlength="3" name="empresa">
 
-            <div class="alert alert-danger" *ngIf="texto.invalid && (texto.dirty || texto.touched)">
-                <div *ngIf="texto.errors.required ">
-                    Apellidos es requerido
+            <div class="alert alert-danger" *ngIf="empresa.invalid && (empresa.dirty || empresa.touched)">
+                <div *ngIf="empresa.errors.required ">
+                    campo requerido
                 </div>
 
-                <div *ngIf="texto.errors.minlength ">
-                    Apellidos debe tener al menos 3 caracteres
+                <div *ngIf="empresa.errors.minlength ">
+                    al menos 3 caracteres
                 </div>
             </div>
         </div>
 
     </div>
-    <!--<div class="form-group">
-                            <label for="texto">Mensaje *</label>
-                            <textarea id="texto" [(ngModel)]="Email.texto" #texto="ngModel" name="texto" cols="10" rows="10" class="form-control" required minlength="10"></textarea>
-                        </div>
-                        <div class="alert alert-danger" *ngIf="texto.invalid && (texto.dirty || texto.touched)">
-                            <div *ngIf="texto.errors.required ">
-                                Mensaje es requerido
-                            </div>
-
-                            <div *ngIf="texto.errors.minlength ">
-                                Mensaje debe tener al menos 10 caracteres
-                            </div>
-                        </div>-->
 
     <div class="form-group ">
         <button [ngClass]="{'boton': mensajeForm.valid}" class="btn btn-rounded botonDisabled " type="button" role="button" (click)='enviarmail(mensajeForm)' [disabled]="!mensajeForm.form.valid">Enviar</button>
 
-        <div class="alert alert-info" role="alert" *ngIf="enviado==true">
+        <div class="alert " role="alert" *ngIf="enviado==true">
             * Mensaje Enviado
 
         </div>
